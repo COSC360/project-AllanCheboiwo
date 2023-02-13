@@ -1,5 +1,4 @@
-# project-Allan Cheboiwo and Abhishek Dash
-project-AllanCheboiwo created by GitHub Classroom
+# Project Proposal by Allan Cheboiwo and Abhishek Dash
 
 # Project Description
 -We are creating a discussion forum website with predetermined categories on which users are allowed to create posts and comment on them if they create accounts. If you don't have an account, you can view posts. The categories we have so far are Politics, Health and Fitness, Sports, Entertainment, and Education.
