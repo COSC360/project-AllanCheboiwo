@@ -1,0 +1,36 @@
+header{
+    background-color: #427A82;
+
+}
+footer{
+    background-color: #012E34;
+}
+main{
+    background-color: #121212;
+    color:white;
+    margin-bottom: 0;
+}
+h1{
+    color: #69969C;
+    margin-top: 0;
+    
+
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+header li{
+    display:inline;
+    
+}
+footer{
+    margin-top: 0;
+}
+footer p{
+    text-align: center;
+    color: #69969C;
+    vertical-align: middle;
+}
