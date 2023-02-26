@@ -118,3 +118,26 @@ p{
     
 
 }
+
+#contactForm{
+    display:flex;
+    flex-direction: column;
+    background-color:#69969C ;
+}
+#contactForm input{
+    display: block;
+}
+#contactForm textarea{
+    display: block;
+}
+
+.profile{
+    background-color: #69969C;
+ 
+} 
+
+.profile img{
+    float:left;
+    height: 100px;
+    margin:0;
+}
