@@ -1,6 +1,9 @@
 
 header{
     background-color: #427A82;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 footer{
@@ -28,20 +31,9 @@ body {
     margin: 0;
     font-size: 100%;
   }
-
-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
 header li{
     display:inline;
     
-}
-footer{
-    height: 25%;
-    margin-top: 0;
 }
 footer p{
     text-align: center;
@@ -50,4 +42,23 @@ footer p{
 }
 p{
     font-size: 1.25em;
+}
+.categories{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #012E34;
+
+}
+.categories li{
+    display: inline;
+
+}
+#category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    width: 100%;
+    background-color: #012E34;;
 }
