@@ -3,7 +3,9 @@
     <head>
         <title>Contact Us</title>
         <link rel="stylesheet" href="css/styles.css">
+        <script src="script/validation.js"></script>
     </head>
+
     <body>
         <header>
             <figure>
@@ -33,16 +35,16 @@
                 <legend>Contact Form</legend>
                 <fieldset>
                 <label for="fname">First Name:</label>
-                <input type="text" id="fname" name="fname" placeholder="Your First Name..">
+                <input type="text" id="fname" name="fname" placeholder="Your First Name.." class="required">
 
                 <label for="sname">Second Name:</label>
-                <input type="text" id="sname" name="sname" placeholder="Your Second Name..">
+                <input type="text" id="sname" name="sname" placeholder="Your Second Name.." class="required">
 
                 <label for="email">Email:</label>
-                <input type="text" id="email" name="email" placeholder="Your email..">
+                <input type="text" id="email" name="email" placeholder="Your email.." class="required">
 
                 <label for="messgage">Subject:</label>
-                <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+                <textarea id="message" name="message" placeholder="Write something.." style="height:200px" class="required"></textarea>
 
                 <input type="submit" value="Submit">
                 </fieldset>
