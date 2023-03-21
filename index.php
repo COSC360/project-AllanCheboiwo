@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if(isset($_SESSION["user_id"])){
+   $conn = require("dbconnect.php");
+    $sql = "SELECT * FROM User WHERE id ={$_SESSION["user_id"]}";
+    $result = $conn->query($sql);
+    $user = $result->fetch_assoc();
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,6 +31,12 @@
                     <li><a href="discuss.html">Discuss</a></li>
                     <li><a href="aboutUs.html">About Us</a></li>
                     <li><a href="contactUs.html">contactUs</a></li>
+                    <?php if(isset($user)): ?>
+                    <li><a><?=htmlspecialchars($user["username"]) ?></a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                    <?php else: ?>
+                    <li><a href="login.php">Login</a></li> or <a href="signup.php">Signup</a></li>
+                    <?php endif;?>
                 </ul>
             </nav>
         </header>

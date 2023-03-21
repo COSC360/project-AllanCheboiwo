@@ -139,18 +139,23 @@ p{
     flex-direction: column;
     background-color:#69969C ;
 }
-#contactForm input{
-    display: block;
-}
-#contactForm textarea{
-    display: block;
-}
+
 
 .profile{
     background-color: #69969C;
  
 } 
-
+#postForm{
+    display:flex;
+    flex-direction: column;
+    background-color:#69969C ;
+}
+#postForm input{
+    display: block;
+}
+#postForm textarea{
+    display: block;
+}
 .profile img{
     float:left;
     height: 100px;
