@@ -1,8 +1,23 @@
+<?php
+
+session_start();
+
+if(isset($_SESSION["user_id"])){
+   $conn = require("dbconnect.php");
+    $sql = "SELECT * FROM User WHERE id ={$_SESSION["user_id"]}";
+    $result = $conn->query($sql);
+    $user = $result->fetch_assoc();
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Home Page</title>
         <link rel="stylesheet" href="css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     </head>
     <body>
         <header>
@@ -12,10 +27,16 @@
             </figure>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="discuss.html">Discuss</a></li>
                     <li><a href="aboutUs.html">About Us</a></li>
                     <li><a href="contactUs.html">contactUs</a></li>
+                    <?php if(isset($user)): ?>
+                    <li><a><?=htmlspecialchars($user["username"]) ?></a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                    <?php else: ?>
+                    <li><a href="login.php">Login</a></li> or <a href="signup.php">Signup</a></li>
+                    <?php endif;?>
                 </ul>
             </nav>
         </header>
@@ -36,7 +57,7 @@
 
         <footer>
             <p>
-                <a href="index.html">Home</a> |
+                <a href="index.php">Home</a> |
                 <a href="discuss.html">Discuss</a> |
                 <a href="aboutUs.html">About Us</a> |
                 <a href="contactUs.html">contactUs</a> 

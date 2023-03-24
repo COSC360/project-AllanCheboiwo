@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Discuss</title>
         <link rel="stylesheet" href="css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     </head>
     <body>
         <header>
@@ -12,7 +14,7 @@
             </figure>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="discuss.html">Discuss</a></li>
                     <li><a href="aboutUs.html">About Us</a></li>
                     <li><a href="contactUs.html">contactUs</a></li>
@@ -23,11 +25,11 @@
         <nav class="categories">
             <ul>
                 <li><a href="discuss.html">General</a></li>
-                <li><a href="sports.html">Sports</a></li>
-                <li><a href="entertainment.html">Entertainment</a></li>
-                <li><a href="politics.html">Politics</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="handF.html">Health and Fitness</a></li>
+                <li><a href="category.php?category=Sports">Sports</a></li>
+                <li><a href="category.php?category=Entertainment">Entertainment</a></li>
+                <li><a href="category.php?category=Politics">Politics</a></li>
+                <li><a href="category.php?category=Education">Education</a></li>
+                <li><a href="category.php?category=HandF">Health and Fitness</a></li>
             </ul>
         </nav>
         <main>
@@ -37,6 +39,7 @@
                 <button>New</button>
                 <button>Hot</button>
             </div>
+            
             <div class="postBox">
                 <div class="upDownVote">
                     <button>&uarr;</button>
@@ -103,7 +106,7 @@
 
         <footer>
             <p>
-                <a href="index.html">Home</a> |
+                <a href="index.php">Home</a> |
                 <a href="discuss.html">Discuss</a> |
                 <a href="aboutUs.html">About Us</a> |
                 <a href="contactUs.html">contactUs</a> 

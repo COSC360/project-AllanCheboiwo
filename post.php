@@ -1,12 +1,14 @@
+<?php 
+    $category=$_GET["category"];
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Contact Us</title>
+        <title>Home Page</title>
         <link rel="stylesheet" href="css/styles.css">
-        <script src="script/validation.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     </head>
-
     <body>
         <header>
             <figure>
@@ -21,36 +23,21 @@
                     <li><a href="contactUs.html">contactUs</a></li>
                 </ul>
             </nav>
-
         </header>
-        <div id="category">
-            <h1>Contact Us</h1>
-        </div>
         <main>
-            <h2>Contacts</h2>
-            <p>
-                Email: johndoe@gmail.contactForm <br>
-                Phone: 0123456789 
-            </p>
-            <form id="contactForm">
-                <legend>Contact Form</legend>
+            <h1>Create Post</h1>
+            <form id="postForm" method="post" action="process-post.php">
+                <legend>Create Post</legend>
                 <fieldset>
-                <label for="fname">First Name:</label>
-                <input type="text" id="fname" name="fname" placeholder="Your First Name.." class="required">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Title.." class="required">
 
-                <label for="sname">Second Name:</label>
-                <input type="text" id="sname" name="sname" placeholder="Your Second Name.." class="required">
-
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" placeholder="Your email.." class="required">
-
-                <label for="messgage">Subject:</label>
-                <textarea id="message" name="message" placeholder="Write something.." style="height:200px" class="required"></textarea>
-
-                <input type="submit" value="Submit">
+                <label for="content">Content</label>
+                <input type="text" id="content" name="content" placeholder="..." class="required">
+                <input type="hidden" id="category" name="category" value="<?php echo $category ?>">
+                <input type="submit" value="Post">
                 </fieldset>
             </form>
-
         </main>
 
         <footer>
@@ -63,7 +50,6 @@
             <p>
                 &copy; 2019 Discuss
             <p>
-
         </footer>
     </body>
 </html>
