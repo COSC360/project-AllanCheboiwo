@@ -1,8 +1,8 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "DiscussionForum";
+    $servername = "cosc360.ok.ubc.ca";
+    $username = "73661290";
+    $password = "73661290";
+    $database = "db_73661290";
 
     $conn = mysqli_connect($servername, $username, $password, $database);
     
