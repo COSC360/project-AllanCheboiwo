@@ -28,9 +28,6 @@ window.onload = function() {
     
     }
 });
-// function ValidateEmail(_mail) 
-// {
 
-// }
 
 }
