@@ -39,10 +39,7 @@
                                         type: "POST",
                                         data: {user_id: user_id},
                                         success: function(data){
-                                            alert("User successfully deleted");
-                                            // document.location="admin.php";
-
-
+                                            console.log("Successfull")
                                         }
                                     });
                                 });
@@ -53,8 +50,7 @@
                                         type: "POST",
                                         data: {user_id: user_id},
                                         success: function(data){
-                                            alert("User successfully disabled");
-                                            // document.location="admin.php";
+                                            console.log("successfull disabled")
                                         }
                                     });
                                 });
