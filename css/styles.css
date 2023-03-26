@@ -5,8 +5,6 @@ header{
     justify-content: center;
     align-items: center;
     height: 15%;
-
-
 }
 header li{
     margin:2em;
@@ -20,18 +18,35 @@ footer{
     background-color: #012E34;
 }
 main{
-    flex: 1;
-    background-color: #121212;
+    flex:1;
+    background-color: red;
     color:white;
-    margin-left:25%;
-    margin-right:25%;
+    float:left;
+    width:40em;
+    height:100%;
+    margin-left:20em;
+
+
 
 }
 h1{
     color: #69969C;
     font-size: 2.5em;
-    
 
+}
+aside{
+   
+    background-color:#69969C;
+    border: 1px solid red;
+    color:black;
+    margin-left:70em;
+    margin-top:0px;
+    height:100%;
+    overflow: hidden;
+
+}
+aside h1{
+    color:black;
 }
 body {                
     display: flex;
@@ -134,27 +149,36 @@ p{
 
 }
 
-#contactForm{
+.form{
     display:flex;
     flex-direction: column;
     background-color:#69969C ;
 }
-#contactForm input{
-    display: block;
-}
-#contactForm textarea{
-    display: block;
-}
+
 
 .profile{
     background-color: #69969C;
  
 } 
+#postForm{
+    display:flex;
+    flex-direction: column;
+    background-color:#69969C ;
+}
+#postForm input{
+    display: block;
+}
+#postForm textarea{
+    display: block;
+}
 
-.profile img{
-    float:left;
-    height: 100px;
-    margin:0;
+#dropdown{
+    display: flex;
+    flex-direction: row;
+  
+}
+a:hover{
+    color: #0a14dd;
 }
 
 

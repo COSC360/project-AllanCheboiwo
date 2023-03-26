@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+        <script src="script/validation.js"></script>
+    </head>
+    <body>
+        <div class="container">
+        <h1>Sign Up</h1>
+        <form action="process-signup.php" method="post" class="form">
+            <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="required">
+            </div>
+
+            <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" class="required">
+            </div>
+    
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="required">
+    
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" name="cpassword" id="cpassword" class="required">
+            <input type="submit" value="Sign Up">
+        </form>
+        </div>
+    </body>
+</html>
