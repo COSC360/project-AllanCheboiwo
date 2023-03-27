@@ -47,7 +47,6 @@ $stmt->bind_param("sss", $_POST["username"], $_POST["email"], $password_hash);
 if($stmt->execute()){
     echo "yessir";
     header("Location: signup-success.html");
-    exit;
 }
 // else{
 //     die($conn->errno);
