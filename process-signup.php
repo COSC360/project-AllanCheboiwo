@@ -43,11 +43,12 @@ if(!$stmt->prepare($sql)){
     die("SQL Error: ". $conn->error);
 }
 $stmt->bind_param("sss", $_POST["username"], $_POST["email"], $password_hash);
-echo "yessir";
-// if($stmt->execute()){
-//     header("Location: signup-success.html");
-//     exit;
-// }
+
+if($stmt->execute()){
+    echo "yessir";
+    header("Location: signup-success.html");
+    exit;
+}
 // else{
 //     die($conn->errno);
 // }
