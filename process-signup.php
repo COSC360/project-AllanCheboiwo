@@ -45,9 +45,10 @@ if($stmt->execute()){
     header("Location: signup-success.html");
     exit;
 }
-else{
-    die($conn->errno);
-}
+echo "yessir";
+// else{
+//     die($conn->errno);
+// }
 
 
 
