@@ -29,10 +29,12 @@ if(! preg_match("/[!@#$%^&*()\-_=+{};:,<.>]/", $_POST["password"])){
 if($_POST["password"] !== $_POST["cpassword"]){
     die("Passwords do not match");
 }
-echo "yessir";
-// $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-// $conn=require("dbconnect.php");
+$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+
+$conn=require("dbconnect.php");
+
+echo "yessir";
 
 // $sql = "INSERT INTO User(username, email, password) VALUES (?, ?, ?)";
 // $stmt = $conn->stmt_init();
