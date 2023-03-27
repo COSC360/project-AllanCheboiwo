@@ -38,11 +38,12 @@ $conn=require("dbconnect.php");
 
  $sql = "INSERT INTO User(username, email, password) VALUES (?, ?, ?)";
  $stmt = $conn->stmt_init();
-    echo "yessir";
-// if(!$stmt->prepare($sql)){
-//     die("SQL Error: ". $conn->error);
-// }
-// $stmt->bind_param("sss", $_POST["username"], $_POST["email"], $password_hash);
+
+if(!$stmt->prepare($sql)){
+    die("SQL Error: ". $conn->error);
+}
+$stmt->bind_param("sss", $_POST["username"], $_POST["email"], $password_hash);
+echo "yessir";
 // if($stmt->execute()){
 //     header("Location: signup-success.html");
 //     exit;
