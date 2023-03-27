@@ -37,20 +37,17 @@ $conn=require("dbconnect.php");
 
 
  $sql = "INSERT INTO User(username, email, password) VALUES (?, ?, ?)";
- $stmt = $conn->stmt_init();
+ $stmt = $conn->prepare($sql);
 
-if(!$stmt->prepare($sql)){
-    die("SQL Error: ". $conn->error);
-}
 $stmt->bind_param("sss", $_POST["username"], $_POST["email"], $password_hash);
 
 if($stmt->execute()){
-    echo "yessir";
     header("Location: signup-success.html");
+    exit;
 }
-// else{
-//     die($conn->errno);
-// }
+else{
+    die($conn->errno);
+}
 
 
 
