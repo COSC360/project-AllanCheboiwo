@@ -49,33 +49,5 @@ echo "yessir";
 // }
 
 
-// $sql = "SELECT username FROM User WHERE username = ?";
-// $stmt = $conn->stmt_init();
-// if(!$stmt->prepare($sql)){
-//     die("SQL Error: ". $conn->error);
-// }
-// $stmt->bind_param("s", $_POST["username"]);
-
-// $stmt->execute();
-
-// $result = $stmt->get_result();
-
-// $count = mysqli_num_rows($result);
-
-// if($count==0){
-//     $sql = "INSERT INTO User(username, email, password_hash) VALUES (?, ?, ?)";
-//     $stmt = $conn->stmt_init();
-//     if(!$stmt->prepare($sql)){
-//         die("SQL Error: ". $conn->error);
-//     }
-//     $stmt->bind_param("sss", $_POST["username"], $_POST["email"], $password_hash);
-
-//     $stmt->execute();
-//     header("Location: login.html");
-//     die();
-// }
-// else{
-//     die("Username already exists");
-// }
 
 ?>
