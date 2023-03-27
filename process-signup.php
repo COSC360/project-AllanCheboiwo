@@ -41,10 +41,10 @@ $conn=require("dbconnect.php");
 
 $stmt->bind_param("sss", $_POST["username"], $_POST["email"], $password_hash);
 
-if($stmt->execute()){
-    header("Location: signup-success.html");
-    exit;
-}
+$stmt->execute()
+header("Location: signup-success.html");
+exit;
+
 echo "yessir";
 // else{
 //     die($conn->errno);
