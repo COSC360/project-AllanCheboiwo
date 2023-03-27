@@ -34,10 +34,11 @@ $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 $conn=require("dbconnect.php");
 
-echo "yessir";
 
-// $sql = "INSERT INTO User(username, email, password) VALUES (?, ?, ?)";
-// $stmt = $conn->stmt_init();
+
+ $sql = "INSERT INTO User(username, email, password) VALUES (?, ?, ?)";
+ $stmt = $conn->stmt_init();
+    echo "yessir";
 // if(!$stmt->prepare($sql)){
 //     die("SQL Error: ". $conn->error);
 // }
