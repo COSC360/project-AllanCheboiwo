@@ -29,23 +29,24 @@ if(! preg_match("/[!@#$%^&*()\-_=+{};:,<.>]/", $_POST["password"])){
 if($_POST["password"] !== $_POST["cpassword"]){
     die("Passwords do not match");
 }
-$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+echo "yessir";
+// $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-$conn=require("dbconnect.php");
+// $conn=require("dbconnect.php");
 
-$sql = "INSERT INTO User(username, email, password) VALUES (?, ?, ?)";
-$stmt = $conn->stmt_init();
-if(!$stmt->prepare($sql)){
-    die("SQL Error: ". $conn->error);
-}
-$stmt->bind_param("sss", $_POST["username"], $_POST["email"], $password_hash);
-if($stmt->execute()){
-    header("Location: signup-success.html");
-    exit;
-}
-else{
-    die($conn->errno);
-}
+// $sql = "INSERT INTO User(username, email, password) VALUES (?, ?, ?)";
+// $stmt = $conn->stmt_init();
+// if(!$stmt->prepare($sql)){
+//     die("SQL Error: ". $conn->error);
+// }
+// $stmt->bind_param("sss", $_POST["username"], $_POST["email"], $password_hash);
+// if($stmt->execute()){
+//     header("Location: signup-success.html");
+//     exit;
+// }
+// else{
+//     die($conn->errno);
+// }
 
 
 // $sql = "SELECT username FROM User WHERE username = ?";
