@@ -42,7 +42,7 @@ function delete_user_by_id(int $id,int $active=0){
 }
 function find_unverififed_user(string $activation_code,string $email){
     $conn=require("dbconnect.php");
-    $sql="SELECT id,activation_code,activation_expir<now as expired FROM User WHERE email=? and active=0";
+    $sql="SELECT id,activation_code,activation_expiry<now as expired FROM User WHERE email=? and active=0";
     $stmt = $conn->stmt_init();
     if(!$stmt->prepare($sql)){
         die("SQL Error: ". $conn->error);
