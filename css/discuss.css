@@ -1,0 +1,17 @@
+aside{
+    position:sticky;
+    height:100%;
+    font-size: 1.25em;
+    margin-left:60em;
+
+}
+aside h1{
+    color:whitesmoke;
+}
+#searchBox{
+    margin-left:20em;
+}
+#search{
+    height:3em;
+    width: 20em;
+}

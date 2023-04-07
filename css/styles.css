@@ -1,12 +1,15 @@
-
+html {
+    position: relative;
+    min-height: 100%;
+  }
 header{
-    background-color: #427A82;
+    background-color:  #012E34;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 15%;
-
-
+    margin-top: 0px;
+    padding:10px;
 }
 header li{
     margin:2em;
@@ -15,31 +18,61 @@ header li{
 header li a{
     color: black;
     text-decoration: none;
+    font-size: 1.5em;
 }
 footer{
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background-color: #012E34;
+    height: 100px;
+    margin-bottom: 0px;
 }
 main{
-    flex: 1;
+    flex:1;
     background-color: #121212;
     color:white;
-    margin-left:25%;
-    margin-right:25%;
+    float: left;
+    width:40em;
+    height:100%;
+    margin-left:20em;
+    overflow: scroll;
+
+
 
 }
 h1{
     color: #69969C;
     font-size: 2.5em;
-    
 
 }
+aside{
+   
+    background-color:hsl(187, 20%, 51%);
+    color:black;
+    margin-left:70em;
+    margin-top:0px;
+    width:20em;
+    height:100%;
+    overflow: auto;
+
+}
+aside h1{
+    color:black;
+}
 body {                
-    display: flex;
     background-color: #121212;
-    flex-direction: column;
-    min-height: 100vh;
     margin: 0;
     font-size: 100%;
+    overflow: auto;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:10px;
+    padding-bottom:60px;
+   
   }
 header li{
     display:inline;
@@ -58,6 +91,7 @@ p{
     flex-direction: row;
     justify-content: center;
     background-color: #012E34;
+   
 
 }
 .categories li{
@@ -67,15 +101,16 @@ p{
 }
 .categories li a{
     color: black;
+    font-size: 1.25em;
     text-decoration: none;
 }
 #category{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin:0;
-    width: 100%;
-    background-color: #012E34;;
+    text-align: center;
+    background-color: #012E34;
+}
+#category h1{
+    display: inline;
+    margin:1em;
 }
 
 #createPost{
@@ -106,39 +141,83 @@ p{
     margin-bottom: 1em;
     background-color:#69969C;
 }
+.commentBox{
+    height:15em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color:#69969C;
+}
+
 .upDownVote{
     width:20%;
     display: flex;
     flex-direction: column;
     float:left;
-    height: 15em;
+    height:15em;
     align-items: center;
     justify-content: center;
 }
-.post{
-    margin-left:25%;
-    height: 13em;
-    color:black;
-    overflow: hidden;
-    margin-bottom: 0.5em;
-    font-size: 0.75em;
 
-}
 
 .comments{
     margin-left:25%;
     width:100%;
     height: 1em;
-    margin-top:1em;
+    margin-top:2em;
+    ;
     
-
+}
+.pc{
+    margin-top:1em;
 }
 
-#contactForm{
+.form{
+   
+    background-color: #121212 ;
+    color:white;
+    margin: 0 auto;
+    width:100%;
+
+}
+.form input{
+    display: block;
+    border-radius:10%;
+    margin: 0.5em;
+    font-size: 1.25em;
+}
+
+
+
+.profile{
+    background-color: #69969C;
+ 
+} 
+#postForm{
     display:flex;
     flex-direction: column;
     background-color:#69969C ;
 }
+#postForm input{
+    display: block;
+}
+#postForm textarea{
+    display: block;
+}
+
+#dropdown{
+    display: flex;
+    flex-direction: row;
+  
+}
+a:hover{
+   background-color:whitesmoke;
+}
+.newUser{
+    margin: 0px 0px 0px 0px;
+    float:right;
+    padding: 0px 0px 0px 50px;
+    }
+
 #contactForm input{
     display: block;
 }
@@ -146,15 +225,40 @@ p{
     display: block;
 }
 
-.profile{
-    background-color: #69969C;
- 
-} 
-
-.profile img{
-    float:left;
-    height: 100px;
+.dropdown{
+  margin-right:0.2em;
+  font-size: 1.5em;
+  background-color:#012E34;
+  color:black;
+  padding:0.25em;
+  float:right;
+  display: flex;
+  justify-content: center;
+  margin:0;
+}
+.dropdown img{
     margin:0;
+
+}
+
+body h1{
+    margin:0 auto;
+    margin-top:3em;
+    margin-bottom:0.5em;
+}
+form label{
+    display: block;
+    margin: 0.5em;
+    font-size: 1.25em;
+}
+body {
+    margin-bottom:0 ;
+
+}
+
+#myDropdown {
+    display:flex;
+    flex-direction: column;
 }
 
 
