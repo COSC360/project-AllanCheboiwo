@@ -50,7 +50,7 @@ function find_unverififed_user(string $activation_code,string $email){
     $stmt->bind_param("s",$email);
     $stmt->execute();
     $result=$stmt->get_result();
-    $result->fetch_assoc();
+    $user->fetch_assoc();
     if($user){
        if((int)$user["expired"]===1){
            delete_user_by_id($user["id"]);
