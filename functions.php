@@ -56,7 +56,7 @@ function find_unverififed_user(string $activation_code,string $email){
            delete_user_by_id($user["id"]);
            return null;
        }
-       if(password_verify($activation_code,$user["activation_code"])){
+       if($activation_code==$user["activation_code"])){
            return $user;
        }
 
