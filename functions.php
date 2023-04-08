@@ -56,12 +56,11 @@ function find_unverififed_user(string $activation_code,string $email){
            delete_user_by_id($user["id"]);
            return null;
        }
-       if($activation_code==$user["activation_code"])){
+  
            return $user;
-       }
+       
 
-    }
-    return null;
+
 }
 function activate_user(int $user_id){
     $conn=require("dbconnect.php");
