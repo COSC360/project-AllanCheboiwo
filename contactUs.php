@@ -63,12 +63,6 @@ if (isset($_SESSION["user_id"])) {
             <h1>Contact Us</h1>
         </div>
         <main>
-            <h2>Contacts</h2>
-            <p>
-                Email: johndoe@gmail
-                <br>
-                Phone: 0123456789 
-            </p>
             <form class="form" id="contactForm" action="contactForm.php" method="post">
                 <legend>Contact Form</legend>
                 <fieldset>
