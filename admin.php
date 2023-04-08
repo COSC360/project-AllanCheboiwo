@@ -26,7 +26,6 @@ if (isset($_SESSION["user_id"])) {
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
             $(document).ready(function(){
-                // //on click user
                 $("#users").click(function(){
                 
                 $("main").empty();
@@ -40,145 +39,57 @@ if (isset($_SESSION["user_id"])) {
                 $("main").append(button);
                 $("main").append(h2);
                 $("main").append(div);
+                $("#searchButton").click(function(){
+                var search = $("#search").val();
                 $.ajax({
                         dataType: "json",
                         url: "getUser.php",
                         type: "POST",
+                        data:{search:search},
                         success: function(data){
                             $(".user").empty();
-
-                            var table=$("<table></table>");
-                            var header=$("<tr><th>Username</th><th>Email</th><th>User Level</th><th>Enable/Disable</th><th>Delete</th></tr>");
-                            table.append(header);
                             for(var i = 0; i < data.length; i++){
-
-                                //DISPLAY RESULT AS A TABLE
-
-
-                                var tr=$("<tr></tr>");
-                                var td=$("<td>"+data[i].username+"</td>");
-                                var td1=$("<td>"+data[i].email+"</td>");
-                                var td2=$("<td>"+data[i].user_level+"</td>");
-                                var enable=1;
-                                var td3;
+                                var userBox = $("<div class='userBox' id='"+data[i].id+"'></div>");
+                                var username = $("<p>Username: "+data[i].username+"</p>");
+                                var email = $("<p>Email: "+data[i].email+"</p>");
+                                var role = $("<p> User level: "+data[i].user_level+"</p>");
+                                var deleteButton = $("<button class='delete'>Delete User</button>");
+                                var enable=0;
                                 if(data[i].user_level==2){
-                                    td3=$("<td><button class='de'>Enable User</button></td>");
+                                    var disableButton = $("<button class='disable'>Enable User</button>");
                                 }
                                 else{
-                                    td3=$("<td><button class='de'>Disable User</button></td>"); 
+                                    var disableButton = $("<button class='enable'>Disable User</button>");
                                     enable=2;
                                 }
-                                var td4=$("<td><button class='delete'>Delete User</button></td>");
-                                var tr2=$("<tr></tr>");
-                                table.append(tr);
-                                tr.append(td);
-                                tr.append(td1);
-                                tr.append(td2);
-                                tr.append(td3);
-                                tr.append(td4);
-                                table.append(tr2);
-                                $(".user").append(table);
+                                userBox.append(username);
+                                userBox.append(email);
+                                userBox.append(role);
+                                userBox.append(deleteButton);
+                                userBox.append(disableButton);
+                                $(".user").append(userBox);
+                               
                                 var user_id = data[i].id;
-    
-                                $(".delete").click(function(){
-                                    $.ajax({
-                                        dataType: "json",
-                                        url: "deleteUser.php",
-                                        type: "POST",
-                                        data: {user_id: user_id},
-                                        success: function(data){
-                                            alert("User Deleted");
-
-
-                                        }
-                                    });
-                                    alert("User Deleted!");
-                                    location.reload();
-                                });
-                                $(".de").click(function(){
-                                    $.ajax({
-                                        dataType: "json",
-                                        url: "disableUser.php",
-                                        type: "POST",
-                                        data: {user_id: user_id,enable:enable},
-                                        success: function(data){
-                                            document.location="admin.php";
-                                        }
-
-                                    });
-                                    alert("Action successful!");
-                                    location.reload();
-
-                                });
-                               // $(".user").append(userBox);
-
-                            }
-                        }
-                       
-                    });
-
-                $("#searchButton").click(function(){
-                    var search = $("#search").val();
-                    $.ajax({
-                        dataType: "json",
-                        url: "getUser.php",
-                        type: "POST",
-                        data: {search: search},
-                        success: function(data){
-                            $(".user").empty();
-
-                            var table=$("<table></table>");
-                            var header=$("<tr><th>Username</th><th>Email</th><th>User Level</th><th>Enable/Disable</th><th>Delete</th></tr>");
-                            table.append(header);
-                            for(var i = 0; i < data.length; i++){
-
-                                //DISPLAY RESULT AS A TABLE
-
-
-                                var tr=$("<tr></tr>");
-                                var td=$("<td>"+data[i].username+"</td>");
-                                var td1=$("<td>"+data[i].email+"</td>");
-                                var td2=$("<td>"+data[i].user_level+"</td>");
-                                var enable=1;
-                                var td3;
-                                if(data[i].user_level==2){
-                                    td3=$("<td><button class='de'>Enable User</button></td>");
-                                }
-                                else{
-                                    td3=$("<td><button class='de'>Disable User</button></td>"); 
-                                    enable=2;
-                                }
-                                var td4=$("<td><button class='delete' id='"+data[i].id+"'>Delete User</button></td>");
-                                var tr2=$("<tr></tr>");
-                                table.append(tr);
-                                tr.append(td);
-                                tr.append(td1);
-                                tr.append(td2);
-                                tr.append(td3);
-                                tr.append(td4);
-                                table.append(tr2);
-                                $(".user").append(table);
-                                var user_id = data[i].id;
-                                $(".delete").mousemove(function(){
+                                $(".userBox").mousemove(function(){
                                    user_id=$(this).attr("id");
                                    console.log(user_id);
                                 });
-                                (".delete").click(function(){
+    
+                                deleteButton.click(function(){
                                     $.ajax({
                                         dataType: "json",
                                         url: "deleteUser.php",
                                         type: "POST",
                                         data: {user_id: user_id},
                                         success: function(data){
-                                            alert("User Deleted");
-
+                                            document.location="admin.php";
 
                                         }
                                     });
-                                    alert("User Deleted!");
-                                    location.reload();
+                                    
+
                                 });
-                                ("de").click(function(){
+                                disableButton.click(function(){
                                     $.ajax({
                                         dataType: "json",
                                         url: "disableUser.php",
@@ -186,22 +97,21 @@ if (isset($_SESSION["user_id"])) {
                                         data: {user_id: user_id,enable:enable},
                                         success: function(data){
                                             document.location="admin.php";
+
                                         }
 
+
                                     });
-                                    alert("Action successful!");
-                                    location.reload();
+
 
                                 });
-                                //$(".user").append(userBox);
+                        
 
                             }
                         }
                        
                     });
                 });
-
-
 
                 });
         
@@ -468,4 +378,4 @@ if (isset($_SESSION["user_id"])) {
 
         </footer>
     </body>
-<.php>
+</html>
