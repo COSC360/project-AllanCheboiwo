@@ -2,6 +2,10 @@
 ini_set("mail.log", "/tmp/mail.log");
 ini_set("mail.add_x_header", TRUE);
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+session_start();
 
 require_once __DIR__ . '/app.php';
 // require_once __DIR__ . '/../config/database.php';
@@ -56,8 +60,13 @@ function find_unverififed_user(string $activation_code,string $email){
            delete_user_by_id($user["id"]);
            return null;
        }
-  
+          if($activation_code==$user["activation_code"]){
            return $user;
+      
+        }
+      }
+  
+           return null;
        
 
 
